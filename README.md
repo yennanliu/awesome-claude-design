@@ -60,6 +60,12 @@ What each aesthetic family actually looks like in production. Thumbnails are sta
 <a href="https://clickhouse.com"><img src="assets/previews/clickhouse.jpg" width="100%" alt="ClickHouse — data-dense pro"></a><br>
 <sub><b><a href="design-md/data-dense/clickhouse.md">ClickHouse · data-dense</a></b><br><code>#181818 / #faff69 / magenta</code></sub>
 </td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<a href="https://finlab.finance"><img src="assets/previews/finlab.png" width="100%" alt="FinLab — data-dense pro"></a><br>
+<sub><b><a href="design-md/data-dense/finlab.md">FinLab · data-dense</a></b><br><code>#fff / #2563eb / gain #16a34a / loss #dc2626</code></sub>
+</td>
 <td align="center" width="33%">
 <a href="https://runwayml.com"><img src="assets/previews/runwayml.jpg" width="100%" alt="RunwayML — cinematic dark"></a><br>
 <sub><b><a href="design-md/cinematic/runway.md">Runway · cinematic</a></b><br><code>#000 / magenta + cyan</code></sub>
