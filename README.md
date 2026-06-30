@@ -1,5 +1,7 @@
 # Awesome Claude Design
 
+> 🌐 Language: **English** ｜ [繁體中文](README.zh-TW.md) ｜ 📘 Tutorial: [繁體中文新手教學](TUTORIAL.zh-TW.md)
+
 > **Claude Design** — Anthropic Labs' AI design workspace. DESIGN.md files grouped by aesthetic family, remix recipes, prompt packs with example outputs, skills, video teardowns, and launch-week community signal.
 
 <p align="center">
