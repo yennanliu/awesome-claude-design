@@ -17,6 +17,7 @@ Static screenshots of public homepages used for editorial reference. Trademarks 
 | `granola.jpg` | https://www.granola.ai | Granola Labs | 2026-04-22 |
 | `crewai.jpg` | https://crewai.com | CrewAI, Inc. | 2026-07-01 |
 | `langfuse.jpg` | https://langfuse.com | Langfuse (Finto Technologies) | 2026-07-01 |
+| `grab.jpg` | https://www.grab.com/sg/ | Grab Holdings | 2026-07-01 |
 
 ## Capture method
 
