@@ -16,6 +16,7 @@ Static screenshots of public homepages used for editorial reference. Trademarks 
 | `theverge.jpg` | https://www.theverge.com | Vox Media | 2026-04-22 |
 | `granola.jpg` | https://www.granola.ai | Granola Labs | 2026-04-22 |
 | `crewai.jpg` | https://crewai.com | CrewAI, Inc. | 2026-07-01 |
+| `langfuse.jpg` | https://langfuse.com | Langfuse (Finto Technologies) | 2026-07-01 |
 
 ## Capture method
 
