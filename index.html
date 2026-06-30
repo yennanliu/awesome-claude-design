@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Awesome Claude Design — DESIGN.md, sorted by visual character</title>
+<meta name="description" content="A mission-control catalog of DESIGN.md files for Claude Design & Claude Code — grouped by aesthetic family, with remix recipes, prompt packs, and workflow recipes.">
+<meta property="og:title" content="Awesome Claude Design">
+<meta property="og:description" content="DESIGN.md, sorted by visual character. 39 design systems · 9 aesthetic families · remix recipes · prompt packs.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===== CrewAI data-dense design system ===== */
+:root{
+  --bg:#0b0e14; --bg-alt:#0f131b; --surface:#161b26; --surface-raised:#1c2230;
+  --text:#e6e9ef; --text-muted:#9aa4b5; --text-dim:#5b6675;
+  --border:#232a38; --border-strong:#313b4d;
+  --accent:#ff5e4d; --accent-hover:#ff7563; --accent-light:#2a1714;
+  --status-running:#ff5e4d; --status-success:#2dd4a7; --status-failed:#f0506a;
+  --status-queued:#c9a227; --status-idle:#5b6675;
+  --cat-1:#ff5e4d; --cat-2:#5b8cff; --cat-3:#2dd4a7; --cat-4:#c084fc; --cat-5:#f5b14c; --cat-6:#4cc9d6;
+  --cat-7:#7aa2ff; --cat-8:#ff8a3d; --cat-9:#d98cff;
+  --mono:'JetBrains Mono','SF Mono',ui-monospace,Menlo,monospace;
+  --ui:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100%}
+img,svg{max-width:100%}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--ui);
+  font-size:14px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{color:var(--accent-hover)}
+.mono{font-family:var(--mono); font-variant-numeric:tabular-nums}
+.tnum{font-variant-numeric:tabular-nums}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+section{border-bottom:1px solid var(--border)}
+.eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-dim)}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--surface);padding:8px 12px;border-radius:6px;z-index:100}
+
+/* ===== nav ===== */
+header.nav{position:sticky; top:0; z-index:50; background:rgba(11,14,20,.82); backdrop-filter:blur(10px); border-bottom:1px solid var(--border)}
+.nav-inner{display:flex; align-items:center; gap:24px; height:56px}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--text); letter-spacing:-.01em}
+.brand:hover{color:var(--text)}
+.mark{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--accent),#d83a2a);display:grid;place-items:center;flex:none;box-shadow:0 0 0 1px rgba(255,94,77,.35)}
+.mark svg{width:14px;height:14px;display:block}
+.nav-links{display:flex; gap:22px; margin-left:8px}
+.nav-links a{color:var(--text-muted); font-size:13px; font-weight:500}
+.nav-links a:hover{color:var(--text)}
+.nav-right{margin-left:auto; display:flex; align-items:center; gap:14px}
+.chip-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;color:var(--text-muted);border:1px solid var(--border);padding:4px 9px;border-radius:999px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--status-success);flex:none}
+.dot.pulse{background:var(--status-running);animation:pulse 1.8s ease-in-out infinite;box-shadow:0 0 0 0 rgba(255,94,77,.6)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,94,77,.55)}70%{box-shadow:0 0 0 7px rgba(255,94,77,0)}100%{box-shadow:0 0 0 0 rgba(255,94,77,0)}}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:13px;border-radius:8px;padding:9px 16px;border:1px solid transparent;cursor:pointer;transition:.15s}
+.btn-primary{background:var(--accent);color:#0b0e14}
+.btn-primary:hover{background:var(--accent-hover);color:#0b0e14}
+.btn-ghost{background:var(--surface);color:var(--text);border-color:var(--border-strong)}
+.btn-ghost:hover{border-color:var(--text-dim);color:var(--text)}
+.nav-toggle{display:none;background:none;border:1px solid var(--border-strong);border-radius:6px;color:var(--text);width:34px;height:30px;cursor:pointer}
+
+/* ===== hero ===== */
+.hero{padding:72px 0 64px; position:relative; overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 340px at 78% -10%, rgba(255,94,77,.10), transparent 60%),
+  radial-gradient(600px 300px at 8% 110%, rgba(91,140,255,.07), transparent 60%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;position:relative}
+.hero h1{font-size:52px;line-height:1.04;font-weight:800;letter-spacing:-.03em;margin:18px 0 18px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.lead{font-size:17px;color:var(--text-muted);max-width:46ch;margin-bottom:28px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-cta .btn{padding:12px 20px;font-size:14px}
+.kbd{font-family:var(--mono);font-size:11px;border:1px solid var(--border-strong);background:var(--surface);border-radius:4px;padding:1px 6px;color:var(--text-muted)}
+
+/* console panel */
+.panel{background:var(--bg-alt);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.45)}
+.panel-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);background:var(--surface)}
+.panel-bar .tt{font-family:var(--mono);font-size:12px;color:var(--text-muted)}
+.panel-bar .tt b{color:var(--text);font-weight:600}
+.panel-bar .right{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--text-dim)}
+.win{display:flex;gap:6px}.win i{width:10px;height:10px;border-radius:50%;display:block}
+.win i:nth-child(1){background:#3a4150}.win i:nth-child(2){background:#3a4150}.win i:nth-child(3){background:#3a4150}
+.trace{padding:8px 0}
+.span-row{display:grid;grid-template-columns:128px 1fr 56px;align-items:center;gap:10px;height:28px;padding:0 14px;font-size:12px}
+.span-row:hover{background:var(--surface)}
+.span-name{display:flex;align-items:center;gap:8px;color:var(--text);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.span-name .cdot{width:8px;height:8px;border-radius:2px;flex:none}
+.bartrack{height:10px;border-radius:3px;background:var(--surface);position:relative;overflow:hidden}
+.barfill{height:100%;border-radius:3px;border-left:2px solid var(--status-success);opacity:.92}
+.span-row .ct{font-family:var(--mono);text-align:right;color:var(--text-muted)}
+.panel-foot{display:flex;gap:18px;padding:10px 14px;border-top:1px solid var(--border);background:var(--surface);font-family:var(--mono);font-size:11px;color:var(--text-muted);flex-wrap:wrap}
+.panel-foot b{color:var(--text);font-weight:600}
+
+/* ===== stats ===== */
+.stats{background:var(--bg-alt)}
+.stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+.stat{padding:26px 18px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat .n{font-size:30px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .l{font-family:var(--mono);font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+
+/* ===== generic section head ===== */
+.shead{padding:56px 0 0}
+.shead h2{font-size:30px;font-weight:700;letter-spacing:-.02em}
+.shead p{color:var(--text-muted);margin-top:10px;max-width:64ch}
+.sbody{padding:28px 0 56px}
+
+/* ===== families ===== */
+.fam-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.fam{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;transition:.15s;display:flex;flex-direction:column;gap:10px}
+.fam:hover{border-color:var(--border-strong);transform:translateY(-1px)}
+.fam-top{display:flex;align-items:center;gap:10px}
+.fam .cdot{width:10px;height:10px;border-radius:3px;flex:none}
+.fam h3{font-size:15px;font-weight:600}
+.fam .zh{color:var(--text-dim);font-weight:400;font-size:13px}
+.fam .count{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--text-muted);border:1px solid var(--border);border-radius:999px;padding:2px 9px}
+.fam .desc{color:var(--text-muted);font-size:13px;flex:1}
+.fam .chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:10.5px;color:var(--text-muted);background:var(--bg-alt);border:1px solid var(--border);border-radius:5px;padding:2px 7px}
+
+/* ===== gallery ===== */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:.15s;display:block;color:var(--text)}
+.card:hover{border-color:var(--border-strong);transform:translateY(-2px);color:var(--text)}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;background:var(--bg-alt);border-bottom:1px solid var(--border)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card .meta{padding:12px 14px}
+.card .meta .row{display:flex;align-items:center;gap:8px}
+.card .meta h4{font-size:14px;font-weight:600}
+.card .meta .pill{margin-left:auto;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border-radius:999px;border:1px solid var(--border)}
+.card .meta .sw{font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ===== quickstart ===== */
+.qs-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:start}
+.steps{counter-reset:step;display:flex;flex-direction:column;gap:18px}
+.step{display:grid;grid-template-columns:32px 1fr;gap:14px}
+.step .num{counter-increment:step;width:32px;height:32px;border-radius:8px;background:var(--accent-light);color:var(--accent);font-family:var(--mono);font-weight:600;display:grid;place-items:center;border:1px solid rgba(255,94,77,.3)}
+.step .num::before{content:counter(step,decimal-leading-zero)}
+.step h4{font-size:15px;font-weight:600;margin-bottom:3px}
+.step p{color:var(--text-muted);font-size:13px}
+.term{background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;font-family:var(--mono);font-size:12.5px;line-height:1.7}
+.term .tbar{display:flex;align-items:center;gap:8px;padding:9px 13px;border-bottom:1px solid var(--border);background:var(--surface);color:var(--text-dim);font-size:11px}
+.term .body{padding:14px 16px;white-space:pre-wrap;overflow-x:auto}
+.term .c-dim{color:var(--text-dim)}
+.term .c-acc{color:var(--accent)}
+.term .c-ok{color:var(--status-success)}
+.term .c-cat{color:var(--cat-2)}
+.term .c-warn{color:var(--status-queued)}
+
+/* ===== resource table ===== */
+.rtable{width:100%;border-collapse:collapse;border:1px solid var(--border);border-radius:10px;overflow:hidden;font-size:13px}
+.rtable th,.rtable td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--border)}
+.rtable thead th{background:var(--surface);font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);font-weight:600}
+.rtable tbody tr:nth-child(odd){background:var(--bg-alt)}
+.rtable tbody tr:hover{background:var(--surface)}
+.rtable td.id{font-family:var(--mono);color:var(--text)}
+.rtable td.id .lead{border-left:2px solid var(--cat-2);padding-left:9px;display:inline-block}
+.rtable .spill{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:999px;border:1px solid var(--border);color:var(--text-muted)}
+.rtable .spill.ok{color:var(--status-success);border-color:rgba(45,212,167,.35)}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.dual h3{font-size:14px;font-family:var(--mono);color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+
+/* ===== footer ===== */
+footer{background:var(--bg-alt);padding:44px 0 36px}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start}
+.foot-brand{max-width:34ch}
+.foot-brand p{color:var(--text-muted);font-size:13px;margin-top:10px}
+.foot-cols{display:flex;gap:56px;flex-wrap:wrap}
+.foot-col h5{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);margin-bottom:10px}
+.foot-col a{display:block;color:var(--text-muted);font-size:13px;margin-bottom:7px}
+.foot-col a:hover{color:var(--text)}
+.foot-bottom{border-top:1px solid var(--border);margin-top:32px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--text-dim);font-size:12px;font-family:var(--mono)}
+
+/* ===== responsive ===== */
+@media (max-width:1024px){
+  .hero h1{font-size:42px}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .stat:nth-child(3){border-right:none}
+  .stat:nth-child(n+4){border-top:1px solid var(--border)}
+  .fam-grid,.gal-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;top:56px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg-alt);border-bottom:1px solid var(--border);padding:8px 24px}
+  .nav-links.open a{padding:11px 0;border-bottom:1px solid var(--border)}
+  .nav-toggle{display:block}
+  .nav-right .btn-ghost{display:none}
+  .hero-grid,.qs-grid,.dual{grid-template-columns:1fr}
+  .hero{padding:48px 0 40px}
+  .hero h1{font-size:34px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat{border-right:none;border-top:1px solid var(--border)}
+  .stat:nth-child(-n+2){border-top:none}
+  .stat:nth-child(odd){border-right:1px solid var(--border)}
+  .fam-grid,.gal-grid{grid-template-columns:1fr}
+  .shead h2{font-size:24px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a href="#families" class="skip">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4l10 8-10 8V4z" fill="#0b0e14"/></svg></span>
+      Awesome Claude Design
+    </a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#families">Families</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#quickstart">Quick start</a>
+      <a href="#resources">Prompts &amp; recipes</a>
+    </nav>
+    <div class="nav-right">
+      <span class="chip-live"><span class="dot pulse"></span>live catalog</span>
+      <a class="btn btn-ghost" href="https://github.com/rohitg00/awesome-claude-design" target="_blank" rel="noopener">GitHub</a>
+      <button class="nav-toggle" id="navtoggle" aria-label="Menu">≡</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">DESIGN.md catalog · Claude Design &amp; Claude Code</span>
+      <h1>Design systems your<br>agents can <span class="hl">read.</span></h1>
+      <p class="lead">A mission-control catalog of <b>DESIGN.md</b> files — sorted by visual character, not industry. Drop one into Claude Design or Claude Code and ship interfaces that don't look like AI slop.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#families">Browse the catalog ▸</a>
+        <a class="btn btn-ghost" href="#quickstart">Quick start <span class="kbd">S</span></a>
+      </div>
+    </div>
+
+    <!-- console / trace panel: the catalog as a crew run -->
+    <div class="panel" aria-hidden="true">
+      <div class="panel-bar">
+        <span class="win"><i></i><i></i><i></i></span>
+        <span class="tt"><b>catalog</b>.run <span style="color:var(--text-dim)">— 9 families</span></span>
+        <span class="right">trace_id 7f3a…e1</span>
+      </div>
+      <div class="trace mono">
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-1)"></span>data-dense</span><span class="bartrack"><span class="barfill" style="width:90%;background:var(--cat-1);border-color:var(--cat-1)"></span></span><span class="ct">7</span></div>
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-4)"></span>cinematic</span><span class="bartrack"><span class="barfill" style="width:100%;background:var(--cat-4);border-color:var(--cat-4)"></span></span><span class="ct">9</span></div>
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-3)"></span>playful</span><span class="bartrack"><span class="barfill" style="width:52%;background:var(--cat-3);border-color:var(--cat-3)"></span></span><span class="ct">4</span></div>
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-6)"></span>terminal</span><span class="bartrack"><span class="barfill" style="width:40%;background:var(--cat-6);border-color:var(--cat-6)"></span></span><span class="ct">3</span></div>
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-2)"></span>editorial</span><span class="bartrack"><span class="barfill" style="width:28%;background:var(--cat-2);border-color:var(--cat-2)"></span></span><span class="ct">2</span></div>
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-5)"></span>warm</span><span class="bartrack"><span class="barfill" style="width:28%;background:var(--cat-5);border-color:var(--cat-5)"></span></span><span class="ct">2</span></div>
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-7)"></span>glass</span><span class="bartrack"><span class="barfill" style="width:28%;background:var(--cat-7);border-color:var(--cat-7)"></span></span><span class="ct">2</span></div>
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-8)"></span>brutalist</span><span class="bartrack"><span class="barfill" style="width:18%;background:var(--cat-8);border-color:var(--cat-8)"></span></span><span class="ct">1</span></div>
+        <div class="span-row"><span class="span-name"><span class="cdot" style="background:var(--cat-9)"></span>indie</span><span class="bartrack"><span class="barfill" style="width:18%;background:var(--cat-9);border-color:var(--cat-9)"></span></span><span class="ct">1</span></div>
+      </div>
+      <div class="panel-foot">
+        <span><b>31</b> systems</span>
+        <span><b>+8</b> remixes</span>
+        <span>status <span style="color:var(--status-success)">●</span> ready</span>
+        <span style="margin-left:auto">MIT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="n" data-count="39">39</div><div class="l">DESIGN.md files</div></div>
+    <div class="stat"><div class="n" data-count="9">9</div><div class="l">Aesthetic families</div></div>
+    <div class="stat"><div class="n" data-count="8">8</div><div class="l">Remix recipes</div></div>
+    <div class="stat"><div class="n" data-count="13">13</div><div class="l">Workflow recipes</div></div>
+    <div class="stat"><div class="n" data-count="6">6</div><div class="l">Prompt packs</div></div>
+    <div class="stat"><div class="n">MIT</div><div class="l">License</div></div>
+  </div>
+</section>
+
+<!-- FAMILIES -->
+<section id="families">
+  <div class="wrap shead">
+    <span class="eyebrow">// the catalog</span>
+    <h2>Sorted by visual character</h2>
+    <p>Not by industry — because that's how designers actually pick. Each family links to working <span class="mono">DESIGN.md</span> files, a one-line swatch, and canonical references you can eyeball before cloning.</p>
+  </div>
+  <div class="wrap sbody">
+    <div class="fam-grid">
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/editorial" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-2)"></span><h3>Editorial <span class="zh">編輯極簡</span></h3><span class="count">2</span></div>
+        <div class="desc">Calm neutrals, narrow-grotesque headlines, generous line-height, single accent. For reading.</div>
+        <div class="chips"><span class="chip">Linear</span><span class="chip">Vercel</span><span class="chip">Stripe</span></div>
+      </a>
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/terminal" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-6)"></span><h3>Terminal-Core <span class="zh">終端機核心</span></h3><span class="count">3</span></div>
+        <div class="desc">Monospace everywhere, phosphor-green on near-black, hard edges, CLI metaphors.</div>
+        <div class="chips"><span class="chip">Ollama</span><span class="chip">Warp</span><span class="chip">OpenCode</span></div>
+      </a>
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/warm" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-5)"></span><h3>Warm Editorial <span class="zh">暖色編輯</span></h3><span class="count">2</span></div>
+        <div class="desc">Terracotta, cream, clay. Serif body, approachable, human. Claude's own brand sits here.</div>
+        <div class="chips"><span class="chip">Claude</span><span class="chip">Mercury</span></div>
+      </a>
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/data-dense" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-1)"></span><h3>Data-Dense Pro <span class="zh">資料密集</span></h3><span class="count">7</span></div>
+        <div class="desc">Charts are the hero. Tight spacing, saturated categorical palette, tabular numerals, dark-first.</div>
+        <div class="chips"><span class="chip">ClickHouse</span><span class="chip">CrewAI</span><span class="chip">Langfuse</span></div>
+      </a>
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/cinematic" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-4)"></span><h3>Cinematic Dark <span class="zh">電影感暗色</span></h3><span class="count">9</span></div>
+        <div class="desc">Film-grade gradients, oversized type, motion-forward, media-heavy hero. For AI &amp; creator tools.</div>
+        <div class="chips"><span class="chip">Runway</span><span class="chip">NVIDIA</span><span class="chip">Ferrari</span></div>
+      </a>
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/playful" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-3)"></span><h3>Playful Color <span class="zh">趣味色彩</span></h3><span class="count">4</span></div>
+        <div class="desc">High-saturation, rounded corners, decorative shapes. Consumer-friendly, energetic.</div>
+        <div class="chips"><span class="chip">Figma</span><span class="chip">Toss</span><span class="chip">Grab</span></div>
+      </a>
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/glass" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-7)"></span><h3>Glass / Soft-Futurism <span class="zh">玻璃柔未來</span></h3><span class="count">2</span></div>
+        <div class="desc">Frosted blur, layered translucency, soft gradients, Apple-adjacent. Premium consumer feel.</div>
+        <div class="chips"><span class="chip">Apple</span><span class="chip">Arc</span></div>
+      </a>
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/brutalist" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-8)"></span><h3>Neon Brutalist <span class="zh">霓虹粗獷</span></h3><span class="count">1</span></div>
+        <div class="desc">Hard edges, deliberate-ugly type mixing, oversized numerals, saturated single hue. Statements.</div>
+        <div class="chips"><span class="chip">The Verge</span></div>
+      </a>
+
+      <a class="fam" href="https://github.com/rohitg00/awesome-claude-design/tree/main/design-md/indie" target="_blank" rel="noopener">
+        <div class="fam-top"><span class="cdot" style="background:var(--cat-9)"></span><h3>Cult / Indie <span class="zh">小眾獨立</span></h3><span class="count">1</span></div>
+        <div class="desc">Indie SaaS, cult tools, magazines, museums. The ones the big catalogs miss — worth cloning.</div>
+        <div class="chips"><span class="chip">Granola</span></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="stats">
+  <div class="wrap shead">
+    <span class="eyebrow">// preview gallery</span>
+    <h2>What each family looks like shipped</h2>
+    <p>Static stills of one representative brand per family. Click a card to open its working <span class="mono">DESIGN.md</span>. Trademarks belong to their owners — editorial reference only.</p>
+  </div>
+  <div class="wrap sbody">
+    <div class="gal-grid">
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/data-dense/crewai.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/crewai.jpg" alt="CrewAI" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>CrewAI</h4><span class="pill" style="color:var(--cat-1);border-color:rgba(255,94,77,.35)">data-dense</span></div><div class="sw">#0b0e14 · #ff5e4d · ok #2dd4a7 · fail #f0506a</div></div>
+      </a>
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/data-dense/langfuse.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/langfuse.jpg" alt="Langfuse" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>Langfuse</h4><span class="pill" style="color:var(--cat-1);border-color:rgba(255,94,77,.35)">data-dense</span></div><div class="sw">#f6f5ef · #0a0a0a · highlight #f5f56b</div></div>
+      </a>
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/data-dense/clickhouse.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/clickhouse.jpg" alt="ClickHouse" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>ClickHouse</h4><span class="pill" style="color:var(--cat-1);border-color:rgba(255,94,77,.35)">data-dense</span></div><div class="sw">#181818 · #faff69 · magenta</div></div>
+      </a>
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/playful/grab.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/grab.jpg" alt="Grab" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>Grab</h4><span class="pill" style="color:var(--cat-3);border-color:rgba(45,212,167,.35)">playful</span></div><div class="sw">#fff · #00b14f · #00692e</div></div>
+      </a>
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/playful/figma.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/figma.jpg" alt="Figma" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>Figma</h4><span class="pill" style="color:var(--cat-3);border-color:rgba(45,212,167,.35)">playful</span></div><div class="sw">#0acf83 · #f24e1e · #a259ff</div></div>
+      </a>
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/editorial/linear.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/linear.jpg" alt="Linear" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>Linear</h4><span class="pill" style="color:var(--cat-2);border-color:rgba(91,140,255,.35)">editorial</span></div><div class="sw">#fff · #0f0f14 · #5e6ad2</div></div>
+      </a>
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/warm/claude.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/anthropic.jpg" alt="Claude / Anthropic" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>Claude</h4><span class="pill" style="color:var(--cat-5);border-color:rgba(245,177,76,.35)">warm</span></div><div class="sw">#f4f3ee · #c96442 · #191817</div></div>
+      </a>
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/terminal/ollama.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/ollama.jpg" alt="Ollama" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>Ollama</h4><span class="pill" style="color:var(--cat-6);border-color:rgba(76,201,214,.35)">terminal</span></div><div class="sw">#000 · #fff · mono</div></div>
+      </a>
+
+      <a class="card" href="https://github.com/rohitg00/awesome-claude-design/blob/main/design-md/cinematic/runway.md" target="_blank" rel="noopener">
+        <div class="thumb"><img src="assets/previews/runwayml.jpg" alt="Runway" loading="lazy"></div>
+        <div class="meta"><div class="row"><h4>Runway</h4><span class="pill" style="color:var(--cat-4);border-color:rgba(192,132,252,.35)">cinematic</span></div><div class="sw">#000 · magenta + cyan</div></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- QUICK START -->
+<section id="quickstart">
+  <div class="wrap shead">
+    <span class="eyebrow">// 4 steps</span>
+    <h2>Ship a system in one paste</h2>
+    <p>No design theory required. Pick a family, hand the <span class="mono">DESIGN.md</span> to Claude, and iterate with inline comments to stay under your token budget.</p>
+  </div>
+  <div class="wrap sbody qs-grid">
+    <div class="steps">
+      <div class="step"><div class="num"></div><div><h4>Pick a family</h4><p>Read-heavy → Editorial. Scan-heavy data → Data-Dense. Consumer app → Playful. Unsure? Run the <span class="mono">family-picker</span> prompt pack.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Copy a DESIGN.md</h4><p>Open the file in the family folder, copy the whole spec. In a hurry? The last section ("Agent Prompt Guide") is a one-paragraph distillation.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Paste into Claude</h4><p>Drop it into Claude Design, or save it as <span class="mono">DESIGN.md</span> at your repo root for Claude Code. Tell it to obey the colors, type, and component rules.</p></div></div>
+      <div class="step"><div class="num"></div><div><h4>Iterate with comments</h4><p>Tweak with inline comments, not fresh chats — vision tokens cost ~3× text. Branch for variants, then hand off to Claude Code in one shot.</p></div></div>
+    </div>
+    <div class="term" aria-hidden="true">
+      <div class="tbar"><span class="win"><i></i><i></i><i></i></span><span style="margin-left:4px">claude-code — design-system</span></div>
+<div class="body"><span class="c-dim"># add a design system to your project</span>
+<span class="c-acc">$</span> cp design-md/data-dense/crewai.md ./DESIGN.md
+
+<span class="c-acc">$</span> claude <span class="c-dim">"read DESIGN.md, build the dashboard</span>
+<span class="c-dim">    from it. obey colors, type, components."</span>
+
+<span class="c-cat">▸ reading</span>  DESIGN.md           <span class="c-ok">ok</span>
+<span class="c-cat">▸ tokens</span>   --bg --accent --text <span class="c-ok">ok</span>
+<span class="c-cat">▸ build</span>    components/         <span class="c-ok">ok</span>
+<span class="c-warn">▸ note</span>     no AI-slop fingerprints
+
+<span class="c-ok">✓ shipped</span> <span class="c-dim">1,284,302 tok · $4.17 · 18s</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section id="resources" class="stats">
+  <div class="wrap shead">
+    <span class="eyebrow">// beyond the catalog</span>
+    <h2>Prompt packs &amp; workflow recipes</h2>
+    <p>Copy-paste prompts with example outputs, and end-to-end recipes you can actually run.</p>
+  </div>
+  <div class="wrap sbody">
+    <div class="dual">
+      <div>
+        <h3>prompts/</h3>
+        <table class="rtable">
+          <thead><tr><th>pack</th><th>does</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="id"><span class="lead">brand-to-design-md</span></td><td>URL → full DESIGN.md</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">audit-live-site</span></td><td>URL → scored audit + punch list</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">3-designer-debate</span></td><td>three-voice critique + synthesis</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">remix-two-brands</span></td><td>merge two DESIGN.md, arbitrate tokens</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">family-picker</span></td><td>3 questions → recommended family</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">break-default-aesthetic</span></td><td>neutralize AI-slop fingerprints</td><td><span class="spill ok">ready</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>recipes/</h3>
+        <table class="rtable">
+          <thead><tr><th>recipe</th><th>flow</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="id"><span class="lead">landing-page-20-min</span></td><td>DESIGN.md → CD → Code → Vercel</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">repo-to-design-system</span></td><td>your CSS → canonical DESIGN.md</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">figma-to-design-md</span></td><td>drag .fig → extract tokens</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">pitch-deck-from-readme</span></td><td>README → 12-slide deck</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">token-budget-claude-design</span></td><td>ship a week on one Pro plan</td><td><span class="spill ok">ready</span></td></tr>
+            <tr><td class="id"><span class="lead">web-capture-to-prototype</span></td><td>live site → prototype</td><td><span class="spill ok">ready</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-primary" href="https://github.com/rohitg00/awesome-claude-design" target="_blank" rel="noopener">Open the repo ▸</a>
+      <a class="btn btn-ghost" href="https://github.com/rohitg00/awesome-claude-design/blob/main/TUTORIAL.zh-TW.md" target="_blank" rel="noopener">繁體中文教學</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M5 4l10 8-10 8V4z" fill="#0b0e14"/></svg></span>Awesome Claude Design</a>
+        <p>DESIGN.md files grouped by aesthetic family, plus remix recipes, prompt packs, and workflow recipes for Claude Design &amp; Claude Code.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h5>Catalog</h5>
+          <a href="#families">Families</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#quickstart">Quick start</a>
+          <a href="#resources">Prompts &amp; recipes</a>
+        </div>
+        <div class="foot-col">
+          <h5>Docs</h5>
+          <a href="https://github.com/rohitg00/awesome-claude-design/blob/main/README.md" target="_blank" rel="noopener">README</a>
+          <a href="https://github.com/rohitg00/awesome-claude-design/blob/main/README.zh-TW.md" target="_blank" rel="noopener">README · 繁體中文</a>
+          <a href="https://github.com/rohitg00/awesome-claude-design/blob/main/TUTORIAL.zh-TW.md" target="_blank" rel="noopener">新手教學</a>
+          <a href="https://github.com/rohitg00/awesome-claude-design/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a>
+        </div>
+        <div class="foot-col">
+          <h5>Links</h5>
+          <a href="https://github.com/rohitg00/awesome-claude-design" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://claude.ai/design" target="_blank" rel="noopener">Claude Design</a>
+          <a href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener">Launch post</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>MIT — use, fork, remix, ship.</span>
+      <span>Not affiliated with Anthropic. Design system: CrewAI · data-dense.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// mobile nav
+var t=document.getElementById('navtoggle'),l=document.getElementById('navlinks');
+if(t)t.addEventListener('click',function(){l.classList.toggle('open')});
+if(l)l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open')})});
+
+// count-up on stats (respects reduced motion)
+var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function countUp(el){
+  var target=+el.getAttribute('data-count'),start=null,dur=900;
+  function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);
+    el.textContent=Math.round(target*(0.2+0.8*p*(2-p)));if(p<1)requestAnimationFrame(step);else el.textContent=target;}
+  requestAnimationFrame(step);
+}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){if(!rm)countUp(e.target);io.unobserve(e.target);}});},{threshold:.5});
+document.querySelectorAll('.stat .n[data-count]').forEach(function(n){io.observe(n)});
+</script>
+</body>
+</html>
