@@ -126,12 +126,12 @@ What each aesthetic family actually looks like in production. Thumbnails are sta
 <a href="https://www.spotify.com/tw/premium/"><img src="assets/previews/spotify.jpg" width="100%" alt="Spotify — cinematic"></a><br>
 <sub><b><a href="design-md/cinematic/spotify.md">Spotify · cinematic</a></b><br><code>#000 / #1ed760 / #ffc9d4 promo</code></sub>
 </td>
+</tr>
+<tr>
 <td align="center" width="33%">
 <a href="https://openai.com/zh-Hant/"><img src="assets/previews/openai.jpg" width="100%" alt="OpenAI — editorial minimalism"></a><br>
 <sub><b><a href="design-md/editorial/openai.md">OpenAI · editorial</a></b><br><code>#000 / #fff / monochrome</code></sub>
 </td>
-</tr>
-<tr>
 <td align="center" width="33%">
 <a href="https://huggingface.co"><img src="assets/previews/huggingface.jpg" width="100%" alt="Hugging Face — data-dense pro"></a><br>
 <sub><b><a href="design-md/data-dense/huggingface.md">Hugging Face · data-dense</a></b><br><code>#0a0a0c / #ffd21e / mono IDs</code></sub>
@@ -140,6 +140,8 @@ What each aesthetic family actually looks like in production. Thumbnails are sta
 <a href="https://www.revolut.com/business/"><img src="assets/previews/revolut.jpg" width="100%" alt="Revolut Business — cinematic"></a><br>
 <sub><b><a href="design-md/cinematic/revolut.md">Revolut · cinematic</a></b><br><code>#000 / metal / blue→violet→pink</code></sub>
 </td>
+</tr>
+<tr>
 <td align="center" width="33%">
 <a href="https://n26.com/en-eu"><img src="assets/previews/n26.jpg" width="100%" alt="N26 — editorial minimalism"></a><br>
 <sub><b><a href="design-md/editorial/n26.md">N26 · editorial</a></b><br><code>#f7f5f0 / #1c7a67 petrol / #dff0ea</code></sub>
