@@ -23,6 +23,7 @@ Static screenshots of public homepages used for editorial reference. Trademarks 
 | `waymo.jpg` | https://waymo.com/ | Waymo LLC | 2026-07-01 |
 | `rocketlab.jpg` | https://rocketlabcorp.com/ | Rocket Lab USA, Inc. | 2026-07-01 |
 | `spotify.jpg` | https://www.spotify.com/tw/premium/ | Spotify AB | 2026-07-01 |
+| `openai.jpg` | https://openai.com/zh-Hant/ | OpenAI | 2026-07-01 |
 
 ## Capture method
 
