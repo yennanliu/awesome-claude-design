@@ -24,6 +24,7 @@ Static screenshots of public homepages used for editorial reference. Trademarks 
 | `rocketlab.jpg` | https://rocketlabcorp.com/ | Rocket Lab USA, Inc. | 2026-07-01 |
 | `spotify.jpg` | https://www.spotify.com/tw/premium/ | Spotify AB | 2026-07-01 |
 | `openai.jpg` | https://openai.com/zh-Hant/ | OpenAI | 2026-07-01 |
+| `huggingface.jpg` | https://huggingface.co/ | Hugging Face, Inc. | 2026-07-01 |
 
 ## Capture method
 
