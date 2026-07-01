@@ -21,6 +21,7 @@ Static screenshots of public homepages used for editorial reference. Trademarks 
 | `langgraph.jpg` | https://www.langchain.com/langgraph | LangChain, Inc. | 2026-07-01 |
 | `aws.jpg` | https://aws.amazon.com/jp/ | Amazon Web Services, Inc. | 2026-07-01 |
 | `waymo.jpg` | https://waymo.com/ | Waymo LLC | 2026-07-01 |
+| `rocketlab.jpg` | https://rocketlabcorp.com/ | Rocket Lab USA, Inc. | 2026-07-01 |
 
 ## Capture method
 
