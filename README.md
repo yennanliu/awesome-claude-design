@@ -144,6 +144,10 @@ What each aesthetic family actually looks like in production. Thumbnails are sta
 <a href="https://n26.com/en-eu"><img src="assets/previews/n26.jpg" width="100%" alt="N26 — editorial minimalism"></a><br>
 <sub><b><a href="design-md/editorial/n26.md">N26 · editorial</a></b><br><code>#f7f5f0 / #1c7a67 petrol / #dff0ea</code></sub>
 </td>
+<td align="center" width="33%">
+<a href="https://www.apple.com"><img src="assets/previews/apple.jpg" width="100%" alt="Apple — glass / soft-futurism"></a><br>
+<sub><b><a href="design-md/glass/apple.md">Apple · glass</a></b><br><code>#fff / #1d1d1f / system blue</code></sub>
+</td>
 </tr>
 </table>
 

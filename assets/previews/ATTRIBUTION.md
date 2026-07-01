@@ -27,6 +27,7 @@ Static screenshots of public homepages used for editorial reference. Trademarks 
 | `huggingface.jpg` | https://huggingface.co/ | Hugging Face, Inc. | 2026-07-01 |
 | `revolut.jpg` | https://www.revolut.com/business/ | Revolut Ltd | 2026-07-01 |
 | `n26.jpg` | https://n26.com/en-eu | N26 GmbH | 2026-07-01 |
+| `apple.jpg` | https://www.apple.com/ | Apple Inc. | 2026-07-01 |
 
 ## Capture method
 
