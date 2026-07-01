@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demos — Awesome Claude Design</title>
+<meta name="description" content="Live demo pages, each built entirely from one DESIGN.md in this catalog.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdfaf8;--bg-warm:#fbeee9;--surface:#ffffff;--surface-2:#fbf6f3;
+  --ink:#1c1613;--text:#2a2320;--text-muted:#6b615b;--text-dim:#9a8f88;
+  --border:#efe4dd;--border-strong:#e4d6cc;
+  --accent:#ff5e4d;--accent-hover:#f0492f;--accent-deep:#d83a2a;--accent-soft:#ffe8e2;
+  --cat-data:#ff5e4d;--cat-cine:#8b46e0;--cat-play:#12a678;--cat-edit:#3b6dff;--cat-warm:#d9832a;--cat-term:#1c9aa8;
+  --serif:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace;--ui:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html,body{overflow-x:hidden;max-width:100%}
+body{background:var(--bg);color:var(--text);font-family:var(--ui);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+a{color:var(--accent-deep);text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep)}
+header.nav{position:sticky;top:0;z-index:20;background:rgba(253,250,248,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);font-size:16px}
+.mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-deep));display:grid;place-items:center;flex:none}
+.mark svg{width:15px;height:15px}
+.back{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--text-muted)}
+.back:hover{color:var(--accent-deep)}
+.hero{text-align:center;padding:64px 0 8px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:52px;letter-spacing:-.02em;color:var(--ink);line-height:1.05;margin-top:14px}
+.hero h1 .it{font-style:italic;font-weight:400}
+.hero p{color:var(--text-muted);max-width:60ch;margin:14px auto 0;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:40px 0 72px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:.18s;display:flex;flex-direction:column}
+.card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 16px 34px rgba(120,50,30,.10)}
+.swatch{height:96px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.swatch .idx{position:absolute;top:10px;left:12px;font-family:var(--mono);font-size:11px;opacity:.7}
+.swatch .dots{display:flex;gap:8px}
+.swatch .dots i{width:22px;height:22px;border-radius:6px;display:block;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.meta{padding:15px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.meta .row{display:flex;align-items:center;gap:8px}
+.meta h3{font-size:16px;font-weight:700;color:var(--ink)}
+.meta .pill{margin-left:auto;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.05em;padding:3px 9px;border-radius:999px}
+.meta p{color:var(--text-muted);font-size:13px;flex:1}
+.meta .links{display:flex;gap:10px;align-items:center;margin-top:2px}
+.meta .view{font-weight:600;color:var(--accent-deep);font-size:13.5px}
+.meta .src{font-family:var(--mono);font-size:12px;color:var(--text-dim)}
+footer{border-top:1px solid var(--border);background:var(--bg-warm);padding:28px 0;text-align:center;color:var(--text-dim);font-family:var(--mono);font-size:12px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:40px}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap nav-inner">
+  <a class="brand" href="../index.html"><span class="mark"><svg viewBox="0 0 24 24"><path d="M5 4l10 8-10 8V4z" fill="#fff"/></svg></span>Awesome Claude Design</a>
+  <a class="back" href="../index.html">← back to site</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">// demo</span>
+  <h1>Built <span class="it">from a DESIGN.md</span></h1>
+  <p>Each demo below is a standalone page whose entire look — colors, type, components — comes from one <span class="mono">DESIGN.md</span> in this catalog. Open a demo, then read the spec it was built from.</p>
+</div></section>
+
+<div class="wrap">
+  <div class="grid">
+
+    <div class="card">
+      <div class="swatch" style="background:#0b0e14"><span class="idx mono" style="color:#9aa4b5">demo_1</span><span class="dots"><i style="background:#0b0e14;border:1px solid #232a38"></i><i style="background:#ff5e4d"></i><i style="background:#2dd4a7"></i></span></div>
+      <div class="meta"><div class="row"><h3>CrewAI</h3><span class="pill" style="color:var(--cat-data);background:var(--accent-soft)">data-dense</span></div>
+        <p>Dark agent mission-control: run trace timeline, token meter, live log.</p>
+        <div class="links"><a class="view" href="crewai.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/data-dense/crewai.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+    <div class="card">
+      <div class="swatch" style="background:#f6f5ef"><span class="idx mono" style="color:#6b6b63">demo_2</span><span class="dots"><i style="background:#f5f56b"></i><i style="background:#0a0a0a"></i><i style="background:#7c3aed"></i></span></div>
+      <div class="meta"><div class="row"><h3>Langfuse</h3><span class="pill" style="color:var(--cat-data);background:var(--accent-soft)">data-dense</span></div>
+        <p>Light paper LLM observability: trace tree, eval scores, kbd shortcuts.</p>
+        <div class="links"><a class="view" href="langfuse.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/data-dense/langfuse.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+    <div class="card">
+      <div class="swatch" style="background:#0d1117"><span class="idx mono" style="color:#9fb0c8">demo_3</span><span class="dots"><i style="background:#7aa8ff"></i><i style="background:#cfe0ff"></i><i style="background:#161d2b;border:1px solid #202a3c"></i></span></div>
+      <div class="meta"><div class="row"><h3>LangGraph</h3><span class="pill" style="color:var(--cat-data);background:var(--accent-soft)">data-dense</span></div>
+        <p>Dark, mono-chrome agent-graph runtime: state DAG + node inspector.</p>
+        <div class="links"><a class="view" href="langgraph.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/data-dense/langgraph.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+    <div class="card">
+      <div class="swatch" style="background:#232f3e"><span class="idx mono" style="color:#b6c2d2">demo_4</span><span class="dots"><i style="background:#ff9900"></i><i style="background:#0972d3"></i><i style="background:#fff"></i></span></div>
+      <div class="meta"><div class="row"><h3>AWS</h3><span class="pill" style="color:var(--cat-data);background:var(--accent-soft)">data-dense</span></div>
+        <p>Enterprise cloud console: squid-ink nav, orange CTA, dense resource table.</p>
+        <div class="links"><a class="view" href="aws.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/data-dense/aws.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+    <div class="card">
+      <div class="swatch" style="background:linear-gradient(120deg,#dfe9f5,#c9d7ea)"><span class="idx mono" style="color:#5b6167">demo_5</span><span class="dots"><i style="background:#2f6bff"></i><i style="background:#34c98a"></i><i style="background:#fff"></i></span></div>
+      <div class="meta"><div class="row"><h3>Waymo</h3><span class="pill" style="color:var(--cat-cine);background:#f3ecfd">cinematic</span></div>
+        <p>Daylight film hero, light grotesque display, blue CTA + moss motif.</p>
+        <div class="links"><a class="view" href="waymo.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/cinematic/waymo.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+    <div class="card">
+      <div class="swatch" style="background:#0a0a0a"><span class="idx mono" style="color:#a3a8b0">demo_6</span><span class="dots"><i style="background:#e4002b"></i><i style="background:#fff"></i><i style="background:#16181c;border:1px solid #262a30"></i></span></div>
+      <div class="meta"><div class="row"><h3>Rocket Lab</h3><span class="pill" style="color:var(--cat-cine);background:#f3ecfd">cinematic</span></div>
+        <p>Aerospace cinematic: aerial film, letterspaced condensed caps, scarce red.</p>
+        <div class="links"><a class="view" href="rocketlab.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/cinematic/rocketlab.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+    <div class="card">
+      <div class="swatch" style="background:#000000"><span class="idx mono" style="color:#b3b3b3">demo_7</span><span class="dots"><i style="background:#1ed760"></i><i style="background:#ffc9d4"></i><i style="background:#1a1a1a;border:1px solid #2a2a2a"></i></span></div>
+      <div class="meta"><div class="row"><h3>Spotify</h3><span class="pill" style="color:var(--cat-cine);background:#f3ecfd">cinematic</span></div>
+        <p>Black canvas, Spotify green + promo pink, album-art mosaic, bold display.</p>
+        <div class="links"><a class="view" href="spotify.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/cinematic/spotify.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+    <div class="card">
+      <div class="swatch" style="background:#000000"><span class="idx mono" style="color:#a1a1a1">demo_8</span><span class="dots"><i style="background:#fff"></i><i style="background:#1a1a1a;border:1px solid #2e2e2e"></i><i style="background:#242424"></i></span></div>
+      <div class="meta"><div class="row"><h3>OpenAI</h3><span class="pill" style="color:var(--cat-edit);background:#e9effe">editorial</span></div>
+        <p>Black-canvas minimalism: one rounded chat input, pill prompts, huge space.</p>
+        <div class="links"><a class="view" href="openai.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/editorial/openai.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+    <div class="card">
+      <div class="swatch" style="background:#ffffff;border-bottom:1px solid var(--border)"><span class="idx mono" style="color:#8a8a8a">demo_9</span><span class="dots"><i style="background:#00b14f"></i><i style="background:#00692e"></i><i style="background:#1a1a1a"></i></span></div>
+      <div class="meta"><div class="row"><h3>Grab</h3><span class="pill" style="color:var(--cat-play);background:#e8f8f1">playful</span></div>
+        <p>Consumer superapp: green brand, bold rounded type, service-tile grid.</p>
+        <div class="links"><a class="view" href="grab.html">View demo →</a><a class="src" href="https://github.com/yennanliu/awesome-claude-design/blob/main/design-md/playful/grab.md" target="_blank" rel="noopener">DESIGN.md</a></div></div>
+    </div>
+
+  </div>
+</div>
+
+<footer>Each demo is built entirely from its DESIGN.md · MIT · <a href="../index.html">Awesome Claude Design</a></footer>
+</body>
+</html>

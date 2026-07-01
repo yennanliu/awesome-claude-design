@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waymo demo — Awesome Claude Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff;--bg-alt:#f5f6f8;--ink:#0a0a0a;--text:#1a1c1f;--muted:#5b6167;--dim:#8a9098;--border:#e6e8ec;
+  --accent:#2f6bff;--accent-h:#1c53e0;--moss:#34c98a;--moss-soft:#e6f7ef;
+  --mono:'JetBrains Mono',ui-monospace,monospace;--ui:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--ui);font-size:15px;line-height:1.6;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.mono{font-family:var(--mono)}
+.ribbon{background:#eef3ff;border-bottom:1px solid #d6e2ff;color:#1c53e0;font-family:var(--mono);font-size:11px;padding:6px 16px;display:flex;gap:8px;align-items:center}
+.ribbon a{color:var(--accent-h);margin-left:auto}
+.nav{display:flex;align-items:center;gap:26px;height:64px;padding:0 24px;border-bottom:1px solid var(--border)}
+.brand{font-weight:700;letter-spacing:.35em;font-size:16px;color:var(--ink)}
+.nav a.lnk{color:var(--text);font-size:14px;font-weight:500}
+.nav .right{margin-left:auto;display:flex;gap:12px;align-items:center}
+.btn{font-weight:600;font-size:14px;border-radius:999px;padding:11px 22px;border:1px solid transparent;cursor:pointer;display:inline-block}
+.btn-p{background:var(--accent);color:#fff}.btn-p:hover{background:var(--accent-h)}
+.btn-d{background:var(--ink);color:#fff}
+.btn-g{background:transparent;color:var(--ink);border-color:var(--border)}
+/* film hero */
+.hero{position:relative;height:520px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:
+  linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.45)),
+  linear-gradient(120deg,#8fa9c9 0%,#b8c6d6 30%,#9fb39a 60%,#c7d3c0 100%)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 40% at 50% 80%, rgba(255,255,255,.12), transparent),
+  repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 2px,transparent 2px 60px);opacity:.5}
+.hero .car{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);width:340px;height:120px;border-radius:60px 60px 18px 18px/70px 70px 18px 18px;background:linear-gradient(180deg,#fdfdfd,#dfe3e8);box-shadow:0 24px 40px rgba(0,0,0,.25)}
+.hero .car::before{content:"";position:absolute;top:-26px;left:50%;transform:translateX(-50%);width:70px;height:34px;border-radius:16px 16px 0 0;background:#0a0a0a}
+.hero .car::after{content:"";position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+.hero .inner{position:relative;z-index:2;color:#fff}
+.hero h1{font-weight:300;font-size:60px;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero .play{margin-top:16px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:999px;padding:10px 20px;font-weight:500;backdrop-filter:blur(6px)}
+.hero .play .pg{width:22px;height:22px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:10px}
+/* safety stats */
+.wrap{max-width:1080px;margin:0 auto;padding:56px 24px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-h)}
+.sec h2{font-weight:300;font-size:34px;letter-spacing:-.01em;color:var(--ink);margin-top:10px}
+.sec p{color:var(--muted);max-width:52ch;margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.stat{background:var(--bg-alt);border:1px solid var(--border);border-radius:16px;padding:24px}
+.stat .n{font-weight:300;font-size:44px;color:var(--ink);letter-spacing:-.02em}
+.stat .n::after{content:"";display:block;width:36px;height:3px;background:var(--moss);border-radius:2px;margin-top:8px}
+.stat .l{color:var(--muted);font-size:14px;margin-top:10px}
+.riderow{margin-top:32px;background:var(--moss-soft);border:1px solid #cdeede;border-radius:18px;padding:20px 24px;display:flex;align-items:center;gap:16px}
+.riderow .eta{font-family:var(--mono);font-weight:600;color:#0f7a52}
+.riderow .btn{margin-left:auto}
+@media (max-width:760px){.hero h1{font-size:38px}.stats{grid-template-columns:1fr}.nav a.lnk{display:none}}
+</style>
+</head>
+<body>
+<div class="ribbon"><span>DEMO · built entirely from</span><span class="mono" style="color:var(--accent-h)">design-md/cinematic/waymo.md</span><a href="index.html">← all demos</a></div>
+
+<div class="nav">
+  <span class="brand">WAYMO</span>
+  <a class="lnk">Rides</a><a class="lnk">Technology</a><a class="lnk">Safety</a><a class="lnk">Cities</a>
+  <span class="right"><button class="btn btn-p">Take a ride</button></span>
+</div>
+
+<section class="hero">
+  <div class="car"></div>
+  <div class="inner">
+    <h1>Because they're everything</h1>
+    <div class="play"><span class="pg">▶</span> Watch the film</div>
+  </div>
+</section>
+
+<div class="wrap sec">
+  <div class="eyebrow">// safety</div>
+  <h2>Driven by software, proven on real streets.</h2>
+  <p>Tens of millions of rider-only miles, measured against human benchmarks in every city we serve.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">71M+</div><div class="l">rider-only miles driven</div></div>
+    <div class="stat"><div class="n">88%</div><div class="l">fewer serious-injury crashes</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">cities, fully autonomous</div></div>
+  </div>
+  <div class="riderow">
+    <span class="eta">ETA 4 min</span>
+    <span style="color:#0f7a52">Your Waymo is on the way — meet it at the pin.</span>
+    <button class="btn btn-d">Track ride</button>
+  </div>
+</div>
+</body>
+</html>

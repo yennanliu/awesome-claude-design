@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LangGraph demo — Awesome Claude Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d1117;--bg-alt:#111826;--surface:#161d2b;--raised:#1d2637;
+  --text:#e8eef7;--muted:#9fb0c8;--dim:#5d6b82;--border:#202a3c;--border-s:#2d3a52;
+  --accent:#7aa8ff;--soft:#cfe0ff;--tint:#142033;
+  --run:#7aa8ff;--ok:#35c98d;--fail:#f0506a;--intr:#e6b450;
+  --c1:#7aa8ff;--c2:#b48cff;--c3:#35c98d;--c4:#f5a25d;--c5:#4cc9d6;--c6:#e879b9;
+  --mono:'JetBrains Mono',ui-monospace,monospace;--sans:'Public Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.5;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.ribbon{background:var(--tint);border-bottom:1px solid var(--border);color:var(--muted);font-size:11px;padding:6px 16px;display:flex;gap:8px;align-items:center}
+.ribbon a{color:var(--accent);margin-left:auto}
+.top{display:flex;align-items:center;gap:14px;height:52px;padding:0 18px;border-bottom:1px solid var(--border);background:var(--bg-alt)}
+.brand{font-weight:600;display:flex;align-items:center;gap:9px}
+.brand .m{width:22px;height:22px;border-radius:6px;background:var(--tint);border:1px solid var(--border-s);display:grid;place-items:center;color:var(--accent)}
+.top nav{display:flex;gap:16px;margin-left:12px;font-size:12px;color:var(--muted)}
+.top nav a.active{color:var(--text)}
+.top .right{margin-left:auto;display:flex;gap:10px}
+.btn{font-family:var(--mono);font-weight:600;font-size:12px;border-radius:6px;padding:8px 14px;border:1px solid var(--border-s);background:transparent;color:var(--text);cursor:pointer}
+.btn-p{background:var(--soft);color:#0d1117;border-color:var(--soft)}
+.hero{padding:36px 18px 8px;max-width:1080px;margin:0 auto}
+.hero .eb{color:var(--accent);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.hero h1{font-family:var(--sans);font-weight:700;color:var(--soft);font-size:38px;letter-spacing:-.02em;line-height:1.05;margin-top:10px}
+.hero p{font-family:var(--sans);color:var(--muted);max-width:56ch;margin-top:10px;font-size:15px}
+.wrap{max-width:1080px;margin:0 auto;padding:18px;display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.card{background:var(--bg-alt);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.ch{padding:10px 14px;border-bottom:1px solid var(--border);background:var(--surface);font-size:12px;color:var(--text);display:flex;gap:8px;align-items:center}
+.ch .id{margin-left:auto;color:var(--dim);font-size:11px}
+/* graph */
+.graph{padding:22px 18px;display:flex;flex-direction:column;align-items:center;gap:0;position:relative}
+.gnode{background:var(--surface);border:1px solid var(--border-s);border-radius:8px;padding:9px 14px;font-size:12px;display:flex;align-items:center;gap:9px;min-width:180px;justify-content:center}
+.gnode .nd{width:8px;height:8px;border-radius:2px}
+.gnode.active{border-color:var(--accent);box-shadow:0 0 0 3px rgba(122,168,255,.18)}
+.gnode.done{border-left:3px solid var(--ok)}
+.edge{width:1px;height:22px;background:var(--border-s)}
+.edge.live{background:linear-gradient(var(--accent),var(--border-s))}
+.branch{display:flex;gap:40px}
+.tick{color:var(--ok);margin-left:4px}
+/* state inspector */
+.state{padding:4px 0}
+.srow{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:6px 14px;font-size:12px;border-bottom:1px solid var(--border)}
+.srow .k{color:var(--muted)}
+.srow .v{color:var(--text)}
+.srow.add{background:rgba(53,201,141,.08)}
+.srow.add .k{color:var(--ok)}
+.badge{font-size:10px;padding:2px 7px;border-radius:999px;background:var(--tint);color:var(--accent);border:1px solid var(--border-s)}
+.foot{padding:9px 14px;border-top:1px solid var(--border);color:var(--dim);font-size:11px}
+@media (max-width:820px){.wrap{grid-template-columns:1fr}.hero h1{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="ribbon"><span>DEMO · built entirely from</span><span style="color:var(--accent)">design-md/data-dense/langgraph.md</span><a href="index.html">← all demos</a></div>
+
+<div class="top">
+  <div class="brand"><span class="m">◧</span>langgraph</div>
+  <nav><a class="active">graph</a><a>threads</a><a>deployments</a></nav>
+  <div class="right"><button class="btn">Read the docs</button><button class="btn btn-p">Start building</button></div>
+</div>
+
+<div class="hero">
+  <div class="eb">// state machine</div>
+  <h1>Balance agent control with agency.</h1>
+  <p>A low-level runtime for stateful agent graphs — inspect every node, edge, and checkpoint as the run executes.</p>
+</div>
+
+<div class="wrap">
+  <div class="card">
+    <div class="ch">graph · reflection_agent<span class="id">thread 4e9a…c2</span></div>
+    <div class="graph">
+      <div class="gnode done"><span class="nd" style="background:var(--c1)"></span>__start__<span class="tick">✓</span></div>
+      <div class="edge"></div>
+      <div class="gnode done"><span class="nd" style="background:var(--c2)"></span>generate<span class="tick">✓</span></div>
+      <div class="edge"></div>
+      <div class="gnode done"><span class="nd" style="background:var(--c5)"></span>tools<span class="tick">✓</span></div>
+      <div class="edge live"></div>
+      <div class="gnode active"><span class="nd" style="background:var(--c4)"></span>reflect <span class="badge">running</span></div>
+      <div class="edge"></div>
+      <div class="gnode"><span class="nd" style="background:var(--c3)"></span>__end__</div>
+    </div>
+    <div class="foot">conditional edge: reflect → generate (retry) | reflect → __end__ · checkpoint saved @ step 4</div>
+  </div>
+
+  <div class="card">
+    <div class="ch">state @ step 4</div>
+    <div class="state">
+      <div class="srow"><span class="k">messages</span><span class="v">[7] <span class="badge">+2</span></span></div>
+      <div class="srow"><span class="k">iteration</span><span class="v">2</span></div>
+      <div class="srow add"><span class="k">reflection</span><span class="v">"tighten the intro, cite source 3"</span></div>
+      <div class="srow add"><span class="k">tool_calls</span><span class="v">1</span></div>
+      <div class="srow"><span class="k">tokens</span><span class="v">18,442</span></div>
+      <div class="srow"><span class="k">next</span><span class="v" style="color:var(--accent)">generate</span></div>
+    </div>
+    <div class="foot">step diff — <span style="color:var(--ok)">2 keys added</span>, 3 changed</div>
+  </div>
+</div>
+</body>
+</html>

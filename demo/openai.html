@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI demo — Awesome Claude Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000;--bg-alt:#0d0d0d;--surface:#1a1a1a;--surface2:#242424;
+  --text:#fff;--muted:#a1a1a1;--dim:#6e6e6e;--border:#2e2e2e;--border-s:#3d3d3d;
+  --ui:'Inter','Noto Sans TC',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;min-width:0}
+html,body{overflow-x:hidden}
+body{background:var(--bg);color:var(--text);font-family:var(--ui);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--text);text-decoration:none}
+.ribbon{background:#0d0d0d;border-bottom:1px solid var(--border);color:var(--muted);font-family:var(--mono);font-size:11px;padding:6px 16px;display:flex;gap:8px;align-items:center}
+.ribbon a{color:#fff;margin-left:auto}
+.nav{display:flex;align-items:center;gap:24px;height:60px;padding:0 22px}
+.logo{font-weight:600;font-size:18px}
+.nav a.lnk{color:var(--text);font-size:14px}
+.nav .right{margin-left:auto;display:flex;gap:10px;align-items:center}
+.btn{font-weight:600;font-size:13px;border-radius:999px;padding:9px 16px;border:1px solid transparent;cursor:pointer;display:inline-flex;gap:7px;align-items:center}
+.btn-w{background:#fff;color:#000}
+.btn-g{background:transparent;color:#fff;border-color:var(--border-s)}
+/* hero */
+.hero{min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 22px 40px}
+.hero h1{font-weight:500;font-size:34px;letter-spacing:-.01em;margin-bottom:26px}
+.ask{width:100%;max-width:720px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px 16px 16px 22px;display:flex;align-items:center;gap:12px;box-shadow:0 1px 2px rgba(0,0,0,.4)}
+.ask .q{flex:1;color:var(--dim);text-align:left;font-size:15px}
+.ask .send{width:38px;height:38px;border-radius:50%;background:var(--surface2);display:grid;place-items:center;flex:none;border:1px solid var(--border-s)}
+.ask .send svg{width:15px;height:15px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+.chip{border:1px solid var(--border-s);border-radius:999px;padding:8px 16px;color:var(--muted);font-size:13.5px;cursor:pointer}
+.chip:hover{background:var(--surface);color:#fff}
+/* tiles */
+.tiles{max-width:1080px;margin:0 auto;padding:20px 22px 72px;display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+.tile{border-radius:16px;overflow:hidden;border:1px solid var(--border);min-height:220px;position:relative;display:flex;align-items:flex-end;padding:22px}
+.tile.a{background:radial-gradient(120% 100% at 20% 0%,#3a2a10,#000);}
+.tile.a::before{content:"";position:absolute;top:24px;left:28px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ffd27a,#f5a623 45%,#a85e00);box-shadow:0 0 60px rgba(245,166,35,.4)}
+.tile.b{background:linear-gradient(135deg,#1a1f3a,#0a0a0a)}
+.tile h3{position:relative;font-weight:500;font-size:20px}
+.tile p{position:relative;color:var(--muted);font-size:13px;margin-top:4px}
+@media (max-width:760px){.tiles{grid-template-columns:1fr}.hero h1{font-size:26px}.nav a.lnk{display:none}}
+</style>
+</head>
+<body>
+<div class="ribbon"><span>DEMO · built entirely from</span><span class="mono">design-md/editorial/openai.md</span><a href="index.html">← all demos</a></div>
+
+<div class="nav">
+  <span class="logo">OpenAI</span>
+  <a class="lnk">研究</a><a class="lnk">產品</a><a class="lnk">開發者</a><a class="lnk">公司</a>
+  <span class="right"><button class="btn btn-g">登入</button><button class="btn btn-w">試用 ChatGPT ↗</button></span>
+</div>
+
+<section class="hero">
+  <h1>有什麼可以幫忙的嗎？</h1>
+  <div class="ask">
+    <span class="q">Teach me Mahjong for beginners</span>
+    <span class="send"><svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5l-6 6M12 5l6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  </div>
+  <div class="chips">
+    <span class="chip">與 ChatGPT 交談</span><span class="chip">研究</span><span class="chip">API 平台</span><span class="chip">品牌故事</span><span class="chip">更多</span>
+  </div>
+</section>
+
+<div class="tiles">
+  <div class="tile a"><div><h3>Introducing our latest research</h3><p>Frontier models, safety, and the science behind them.</p></div></div>
+  <div class="tile b"><div><h3>Build with the API</h3><p>Ship agents and apps on the platform.</p></div></div>
+</div>
+</body>
+</html>
