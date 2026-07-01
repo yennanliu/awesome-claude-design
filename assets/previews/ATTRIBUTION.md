@@ -19,6 +19,7 @@ Static screenshots of public homepages used for editorial reference. Trademarks 
 | `langfuse.jpg` | https://langfuse.com | Langfuse (Finto Technologies) | 2026-07-01 |
 | `grab.jpg` | https://www.grab.com/sg/ | Grab Holdings | 2026-07-01 |
 | `langgraph.jpg` | https://www.langchain.com/langgraph | LangChain, Inc. | 2026-07-01 |
+| `aws.jpg` | https://aws.amazon.com/jp/ | Amazon Web Services, Inc. | 2026-07-01 |
 
 ## Capture method
 
