@@ -43,7 +43,7 @@ Scale: 13 / 14 / 16 / 18 / 22 / 28 / 40 / 56. Serif headlines live at 40–56; b
 ## 4. Component Stylings
 
 **Hero**
-- Serif headline (40–56), one calm sub-line in `--muted` sans, a single solid CTA, and a real product screenshot. No gradient wash, no floating orbs.
+- Serif headline (40–56), one calm sub-line in `--muted` sans, two CTAs (solid `--ink` pill + ghost), and a real product screenshot beneath. Background is a *very* soft, desaturated ambient wash (pale lavender → warm peach) over the paper — barely-there, never a bold saturated gradient or floating orbs.
 
 **Buttons**
 - Primary: solid `--ink` (or `--amber` for emphasis moments) fill, white text, fully-to-generously rounded, comfortable padding. "免費開始" / "Start Free".

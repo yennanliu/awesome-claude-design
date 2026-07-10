@@ -150,6 +150,10 @@ What each aesthetic family actually looks like in production. Thumbnails are sta
 <a href="https://www.apple.com"><img src="assets/previews/apple.jpg" width="100%" alt="Apple — glass / soft-futurism"></a><br>
 <sub><b><a href="design-md/glass/apple.md">Apple · glass</a></b><br><code>#fff / #1d1d1f / system blue</code></sub>
 </td>
+<td align="center" width="33%">
+<a href="https://slima.ai/zh-TW"><img src="assets/previews/slima.jpg" width="100%" alt="Slima — warm editorial / literary"></a><br>
+<sub><b><a href="design-md/warm/slima.md">Slima · warm</a></b><br><code>#faf9f6 / serif / amber+green+indigo</code></sub>
+</td>
 </tr>
 </table>
 
